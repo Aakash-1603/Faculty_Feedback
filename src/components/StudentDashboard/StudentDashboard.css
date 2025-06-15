@@ -1,0 +1,227 @@
+/* StudentDashboard.css */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.student-info-section {
+  background-color: #141425;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(155, 114, 201, 0.1);
+}
+
+.student-info-section h2 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.student-info-section h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: 16px;
+  width: 4px;
+  background-color: #9b72c9;
+  border-radius: 2px;
+}
+
+.student-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.student-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #a0a0a0;
+  flex: 1;
+  min-width: 160px;
+  padding: 10px 16px;
+  background-color: #1f1f2e;
+  border-radius: 8px;
+}
+
+.student-info strong {
+  color: #ffffff;
+  margin-right: 5px;
+}
+
+.teachers-list {
+  background-color: #141425;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(155, 114, 201, 0.1);
+}
+
+.teachers-list h2 {
+  margin-bottom: 24px;
+  font-size: 20px;
+  color: #ffffff;
+  position: relative;
+  padding-left: 14px;
+}
+
+.teachers-list h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: 18px;
+  width: 4px;
+  background-color: #9b72c9;
+  border-radius: 2px;
+}
+
+.no-teachers {
+  text-align: center;
+  padding: 40px 20px;
+  color: #a0a0a0;
+  background-color: #1f1f2e;
+  border-radius: 8px;
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.teacher-card {
+  display: flex;
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(155, 114, 201, 0.1);
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-color: rgba(155, 114, 201, 0.3);
+}
+
+.teacher-image {
+  width: 120px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1f2e;
+  padding: 16px;
+  position: relative;
+}
+
+.teacher-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(155, 114, 201, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  padding: 2px; /* Inner white padding */
+}
+
+.teacher-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teacher-info h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.teacher-info p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #a0a0a0;
+  line-height: 1.4;
+}
+
+.feedback-button {
+  margin-top: auto;
+  padding: 12px;
+  background-color: #9b72c9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(155, 114, 201, 0.3);
+  margin-top: 16px;
+}
+
+.feedback-button:hover {
+  background-color: #a680d4;
+  transform: translateY(-2px);
+}
+
+.feedback-button:active {
+  transform: translateY(0);
+}
+
+.feedback-button.disabled {
+  background-color: #3f3f5a;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.feedback-button.disabled:hover {
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 16px;
+  }
+  
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .student-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .student-info p {
+    min-width: 100%;
+  }
+  
+  .teacher-image {
+    width: 100px;
+    min-width: 100px;
+  }
+  
+  .teacher-image img {
+    width: 70px;
+    height: 70px;
+  }
+}
